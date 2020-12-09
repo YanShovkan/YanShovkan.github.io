@@ -5,7 +5,9 @@
     <title>Регистрационная страница</title>
     <link rel="stylesheet" href="style.css" />
 	<link href="../favicon.png" rel="icon" type="image/png" />
-</head>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+	<script src="../rules.js"></script>
+	</head>
 <body >
 
 	<div class="bottom" >Группа ВК: SnakeGroup</div>
@@ -23,16 +25,18 @@
 			</li>
 			<li>
 			<li>
-				<a href="../rules.html">Правила</a>
+				<a onclick="showRules()">Правила</a>
 			</li>
 		</ul>
 	</div>
 	
-	<form id="reg">
+	<form id = "reg">
 		<label>	Введите своё имя</label>
-		<input type="text" required>
-		<button onclick="window.location.href='../game/game.html'" type="submit">Играть</button>
+		<input type="text" value="user" required >
+		<button type="submit">Играть</button>
 	</form>
 		
+	<script src="register.js"></script>
+	
 </body>
 </html>
