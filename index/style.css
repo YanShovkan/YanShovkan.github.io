@@ -40,6 +40,7 @@ body {
 }
 
 #navbar {
+	cursor: pointer;
 	margin-left: 5%;
 	padding: 0;
 	list-style-type: none;
