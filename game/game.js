@@ -5,13 +5,11 @@ const fieldIMG = new Image();
 fieldIMG.src = "field.png";
 
 let score = 0;
-
 let cellSize = 32;
 let food = {
 	x: Math.floor((Math.random()* 9 + 2))* cellSize,
 	y: Math.floor((Math.random()* 9 + 2))* cellSize
 };
-
 let snake = [];
 snake[0] = {
 	x: 5 * cellSize,
@@ -28,18 +26,23 @@ snake[2] = {
 
 document.addEventListener("keydown", direction);
 
+let pressed = 0;
 let dir = "right";
 var paused = new Boolean(true);
 
 function direction(event){
-	if(event.keyCode == 37 && dir != "right"){
+	if(event.keyCode == 37 && dir != "right" && pressed == 0 && paused == false){
 		dir = "left";
-	} else if (event.keyCode == 38 && dir != "down"){
+		pressed++;
+	} else if (event.keyCode == 38 && dir != "down" && pressed == 0 && paused == false){
 		dir = "up";
-	}else if (event.keyCode == 39 && dir != "left"){
+		pressed++;
+	}else if (event.keyCode == 39 && dir != "left" && pressed == 0 && paused == false){
 		dir = "right";
-	}else if (event.keyCode == 40 && dir != "up"){
+		pressed++;
+	}else if (event.keyCode == 40 && dir != "up" && pressed == 0 && paused == false){
 		dir = "down";
+		pressed++;
 	}else if (event.keyCode == 32){
 		if (paused == false){
 			paused = true;
@@ -50,6 +53,7 @@ function direction(event){
 }
 
 function drawGame(){
+	pressed = 0;
 	ctx.drawImage(fieldIMG, 0, 0);
 	drawApple();
 	drawSnake();
@@ -121,4 +125,4 @@ function checkStatus(){
 	}
 }
 
-let game = setInterval(drawGame, 100);
+let game = setInterval(drawGame, 125);
