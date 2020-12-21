@@ -2,6 +2,10 @@ body {
 	font-family:fantasy;
 }
 
+img {
+	width: 100%;
+}
+
 .bottom {
 	position: fixed;
     left: 0;
@@ -15,13 +19,13 @@ body {
 
 .logo {
 	margin-top: 1em;
-    margin-left: 13%;
-	width: 10%;
+  margin-left: 13%;
+  width: 130px;
+  padding-left: 5em;
 }
 
 .picture{
 	margin-left: 10%;
-	margin-top: 16em;
 	width: 80%;
 	height: 40em;
 }
@@ -37,6 +41,10 @@ body {
 	top: 0; 
 	width: 100%;
 	background-color: #82E28C; 
+	height: 220px;
+	display: grid;
+	grid-template: 1fr 1fr / repeat(4, 1fr);
+
 }
 
 #navbar {
@@ -48,6 +56,8 @@ body {
 	width: 90%;
 	text-align: center;
 	background-color: #FFF;
+	grid-row: 2 / 3;
+	grid-column: 1 / 5;
 }
 
 #navbar li { 
@@ -65,4 +75,35 @@ body {
 
 #navbar a:hover {
     background-color: #CFCFCF;
+}
+
+.main-title {
+	font-size: 3rem;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-title:before {
+	width: 90px;
+	height: 2px;
+	content: "";
+	display: block;
+	background: #000;
+	margin-right: 15px;
+}
+
+.main-title:after {
+	width: 90px;
+	height: 2px;
+	content: "";
+	display: block;
+	background: #000;
+	margin-left: 15px;
+}
+
+main {
+	margin-top: 220px;
+	padding: 10px;
 }
